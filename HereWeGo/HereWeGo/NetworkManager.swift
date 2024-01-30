@@ -9,11 +9,11 @@ import Foundation
 
 class NetworkManager {
     static let shared = NetworkManager()
-    private let baseURL = URL(string: "http://yourserveraddress:3000")!
+    private let baseURL = URL(string: "http://10.0.0.8:3000")!
 
     private init() {}
 
-    func createTrip(trip: Trip, completion: @escaping (Result<Trip, Error>) -> Void) {
+    func createTrip(trip: Trip, completion: @escaping (Result<createTripResponse, Error>) -> Void) {
         let endpoint = baseURL.appendingPathComponent("/createTrip")
         var request = URLRequest(url: endpoint)
         request.httpMethod = "POST"
@@ -22,6 +22,7 @@ class NetworkManager {
         do {
             request.httpBody = try JSONEncoder().encode(trip)
         } catch {
+            print("Error encoding JSON")
             completion(.failure(error))
             return
         }
@@ -36,8 +37,8 @@ class NetworkManager {
                 return
             }
             do {
-                let trip = try JSONDecoder().decode(Trip.self, from: data)
-                completion(.success(trip))
+                let createResponse = try JSONDecoder().decode(createTripResponse.self, from: data)
+                completion(.success(createResponse))
             } catch {
                 completion(.failure(error))
             }

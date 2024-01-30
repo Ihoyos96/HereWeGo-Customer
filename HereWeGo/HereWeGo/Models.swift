@@ -14,4 +14,17 @@ struct Trip: Codable {
     var dropoffLocation: String
     var tripStatus: String
     // Add other properties as needed
+    
+    // default init for testing
+    init() {
+        self.tripId = UUID().uuidString
+        self.userId = "user123"
+        self.pickupLocation = "LocationA"
+        self.dropoffLocation = "LocationB"
+        self.tripStatus = "open"
+    }
+}
+
+struct createTripResponse: Codable {
+    var tripId: String
 }
