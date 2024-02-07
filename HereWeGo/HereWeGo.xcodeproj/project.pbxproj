@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CC4A2B42B73F53400439FAF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC4A2B32B73F53400439FAF /* MapView.swift */; };
+		7CC4A2B62B73FD1A00439FAF /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC4A2B52B73FD1A00439FAF /* CoreLocationManager.swift */; };
+		7CC4A2B82B741F5D00439FAF /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC4A2B72B741F5D00439FAF /* UserDefaultsManager.swift */; };
+		7CC4A2BA2B7427C400439FAF /* LocationSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC4A2B92B7427C400439FAF /* LocationSearchManager.swift */; };
+		7CC4A2BC2B743F2B00439FAF /* Cleansheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC4A2BB2B743F2B00439FAF /* Cleansheet.swift */; };
 		7CD095FE2B6961760011E65C /* HereWeGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD095FD2B6961760011E65C /* HereWeGoApp.swift */; };
 		7CD096002B6961760011E65C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD095FF2B6961760011E65C /* MainView.swift */; };
 		7CD096022B6961770011E65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD096012B6961770011E65C /* Assets.xcassets */; };
@@ -39,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C5659612B6AA7FB0007535C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7CC4A2B32B73F53400439FAF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		7CC4A2B52B73FD1A00439FAF /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
+		7CC4A2B72B741F5D00439FAF /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		7CC4A2B92B7427C400439FAF /* LocationSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchManager.swift; sourceTree = "<group>"; };
+		7CC4A2BB2B743F2B00439FAF /* Cleansheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cleansheet.swift; sourceTree = "<group>"; };
 		7CD095FA2B6961760011E65C /* HereWeGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HereWeGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD095FD2B6961760011E65C /* HereWeGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereWeGoApp.swift; sourceTree = "<group>"; };
 		7CD095FF2B6961760011E65C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -104,15 +115,21 @@
 		7CD095FC2B6961760011E65C /* HereWeGo */ = {
 			isa = PBXGroup;
 			children = (
+				7C5659612B6AA7FB0007535C /* Info.plist */,
 				7CD095FD2B6961760011E65C /* HereWeGoApp.swift */,
 				7CD095FF2B6961760011E65C /* MainView.swift */,
-				7CD096012B6961770011E65C /* Assets.xcassets */,
 				7CD096062B6961770011E65C /* Persistence.swift */,
-				7CD096082B6961770011E65C /* HereWeGo.xcdatamodeld */,
-				7CD096032B6961770011E65C /* Preview Content */,
 				7CD0962C2B6967220011E65C /* NetworkManager.swift */,
 				7CD0962E2B69675C0011E65C /* Models.swift */,
 				7CD096302B69677D0011E65C /* WebSocketManager.swift */,
+				7CD096012B6961770011E65C /* Assets.xcassets */,
+				7CD096082B6961770011E65C /* HereWeGo.xcdatamodeld */,
+				7CD096032B6961770011E65C /* Preview Content */,
+				7CC4A2B32B73F53400439FAF /* MapView.swift */,
+				7CC4A2B52B73FD1A00439FAF /* CoreLocationManager.swift */,
+				7CC4A2B72B741F5D00439FAF /* UserDefaultsManager.swift */,
+				7CC4A2B92B7427C400439FAF /* LocationSearchManager.swift */,
+				7CC4A2BB2B743F2B00439FAF /* Cleansheet.swift */,
 			);
 			path = HereWeGo;
 			sourceTree = "<group>";
@@ -273,9 +290,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CD096072B6961770011E65C /* Persistence.swift in Sources */,
+				7CC4A2B42B73F53400439FAF /* MapView.swift in Sources */,
+				7CC4A2B62B73FD1A00439FAF /* CoreLocationManager.swift in Sources */,
 				7CD096002B6961760011E65C /* MainView.swift in Sources */,
 				7CD0962D2B6967220011E65C /* NetworkManager.swift in Sources */,
 				7CD0962F2B69675C0011E65C /* Models.swift in Sources */,
+				7CC4A2BA2B7427C400439FAF /* LocationSearchManager.swift in Sources */,
+				7CC4A2BC2B743F2B00439FAF /* Cleansheet.swift in Sources */,
+				7CC4A2B82B741F5D00439FAF /* UserDefaultsManager.swift in Sources */,
 				7CD095FE2B6961760011E65C /* HereWeGoApp.swift in Sources */,
 				7CD0960A2B6961770011E65C /* HereWeGo.xcdatamodeld in Sources */,
 				7CD096312B69677D0011E65C /* WebSocketManager.swift in Sources */,
@@ -367,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -424,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -445,12 +467,15 @@
 				DEVELOPMENT_TEAM = HJD93AMRBQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HereWeGo/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to provide it to the driver upon trip request";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,12 +504,15 @@
 				DEVELOPMENT_TEAM = HJD93AMRBQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HereWeGo/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to provide it to the driver upon trip request";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,25 +1,40 @@
-//
-//  WebSocketManager.swift
-//  HereWeGo
-//
-//  Created by Ian Hoyos on 1/30/24.
-//
-
 import Foundation
 
 class WebSocketManager {
     private var webSocketTask: URLSessionWebSocketTask?
-    
+    private let url = URL(string: "ws://172.20.10.8:3000")!
+    private var isConnected: Bool = false
+
     func connect() {
-        let url = URL(string: "ws://10.0.0.8:3000")!
+        guard !isConnected else { return }
+
         webSocketTask = URLSession.shared.webSocketTask(with: url)
         webSocketTask?.resume()
-
         receiveMessage()
+        isConnected = true
+        
+        // Call identifyAsCustomer right after establishing the connection
+        identifyAsCustomer()
     }
 
     func disconnect() {
-        webSocketTask?.cancel(with: .normalClosure, reason: nil)
+        guard isConnected else { return }
+
+        webSocketTask?.cancel(with: .goingAway, reason: nil)
+        isConnected = false
+    }
+    
+    private func identifyAsCustomer() {
+        // Modify as needed, perhaps based on some app state or user input
+        // userId would be substituted with unique device id stored in User Defaults
+        let identificationMessage = ["type": "identify", "role": "customer", "userId": "MyUniqueIdForNow"] as [String : Any]
+        guard let messageData = try? JSONSerialization.data(withJSONObject: identificationMessage, options: []),
+              let messageString = String(data: messageData, encoding: .utf8) else {
+            print("Error: Unable to serialize identification message to JSON string")
+            return
+        }
+
+        sendMessage(messageString)
     }
 
     private func receiveMessage() {
@@ -27,19 +42,26 @@ class WebSocketManager {
             switch result {
             case .failure(let error):
                 print("Error in receiving message: \(error)")
-            case .success(.string(let str)):
-                print("Received string: \(str)")
-                // Handle received string
-                self?.receiveMessage() // Continue receiving messages
-            case .success(.data(let data)):
-                print("Received data: \(data)")
-                // Handle received data
-                self?.receiveMessage() // Continue receiving messages
-            default:
-                break
+            case .success(let message):
+                switch message {
+                case .string(let text):
+                    print("Received string: \(text)")
+                case .data(let data):
+                    print("Received data: \(data)")
+                default:
+                    break
+                }
+
+                self?.receiveMessage()
             }
         }
     }
 
-    // Add function to send messages if needed
+    func sendMessage(_ message: String) {
+        webSocketTask?.send(.string(message)) { error in
+            if let error = error {
+                print("Error in sending message: \(error)")
+            }
+        }
+    }
 }

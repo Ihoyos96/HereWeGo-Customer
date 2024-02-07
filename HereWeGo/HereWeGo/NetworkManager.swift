@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkManager {
     static let shared = NetworkManager()
-    private let baseURL = URL(string: "http://10.0.0.8:3000")!
+    private let baseURL = URL(string: "http://172.20.10.08:3000")!
 
     private init() {}
 
